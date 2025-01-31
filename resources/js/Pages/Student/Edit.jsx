@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useForm, usePage, Head } from '@inertiajs/react';
+import { useForm, Head } from '@inertiajs/react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 
 const EditStudent = ({ Student }) => {
@@ -33,12 +33,12 @@ const EditStudent = ({ Student }) => {
             <div className="py-12 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
                     <h2 className="text-2xl font-bold mb-6">Edit</h2>
-                    <from onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2">Name:</label>
                             <input
                                 type="text"
-                                Value={data.StudentName}
+                                value={data.StudentName}
                                 onChange={(e) => setData('StudentName', e.target.value)}
                                 ref={StudentNameInputRef}
                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -49,7 +49,7 @@ const EditStudent = ({ Student }) => {
                             <label className="block text-gray-700 text-sm font-bold mb-2">Major:</label>
                             <input
                                 type="text"
-                                Value={data.Major}
+                                value={data.Major}
                                 onChange={(e) => setData('Major', e.target.value)}
                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             />
@@ -59,7 +59,7 @@ const EditStudent = ({ Student }) => {
                             <label className="block text-gray-700 text-sm font-bold mb-2">Email:</label>
                             <input
                                 type="text"
-                                Value={data.Email}
+                                value={data.Email}
                                 onChange={(e) => setData('Email', e.target.value)}
                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             />
@@ -69,7 +69,7 @@ const EditStudent = ({ Student }) => {
                             <label className="block text-gray-700 text-sm font-bold mb-2">Phone:</label>
                             <input
                                 type="text"
-                                Value={data.Phone}
+                                value={data.Phone}
                                 onChange={(e) => setData('Phone', e.target.value)}
                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             />
@@ -79,9 +79,10 @@ const EditStudent = ({ Student }) => {
                             <button
                                 type="submit"
                                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                                Save </button>
+                                Save
+                            </button>
                         </div>
-                    </from>
+                    </form>
                 </div>
             </div>
         </AuthenticatedLayout>
